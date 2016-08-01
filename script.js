@@ -11,7 +11,38 @@ $(document).ready(function() {
             $(this).children('.collect').slideUp(500);
         }
     );
+    //hover highlight
+    $('.collection').hover(
+        function() {
+            var index = $(this).index();
+            var width = $(".scrolly").get(0).scrollWidth;
+            $(this).children('.overlay').css("width",width+"px");
+            $(this).children('.overlay').fadeIn(500);
+            $(this).children('.overlay2').fadeIn(500);
+            var scroll = $(this).scrollLeft();
+            if (scroll === 0) {
+                $(this).children('.overlay2').children('div').fadeIn(500);
+            }        
+        },
+        function() {
+            $(this).children('.overlay').fadeOut(500);
+            $(this).children('.overlay2').fadeOut(500);
+        }
+    );
 
+    var left = $('.collection').width();
+
+    $('.collection').scroll(function() {
+        var scroll = $(this).scrollLeft();
+        var together = left+scroll;
+        $(this).children('.overlay2').children('h2').css("left", scroll + "px");
+
+        // console.log($(this).children('.overlay').width());
+        // if (together < $(this).children('.overlay').width()) {
+        // $(this).children('.overlay2').children('div').css("left", together + "px");}
+        $(this).children('.overlay').fadeOut(500);
+        if (scroll != 0) {$(this).children('.overlay2').children('div').fadeOut(500);}
+    });
     // resize images to make width and height equal
     $(window).resize(function(){
         // If there are multiple elements with the same class, "main"
