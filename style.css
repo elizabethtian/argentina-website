@@ -1,0 +1,403 @@
+html { 
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+.loading {overflow: hidden;}
+/* =Preloader */
+#preloader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  background-color: #000;
+  color: #fff;
+}
+#preloader .txt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); 
+}
+#preloader .txt-perc {
+    font-size: 50px;
+    font-family: 'Raleway', Helvetica, Helvetica Neue, Arial, sans-serif;
+    opacity: 1;
+    margin: 0 0 15px 0;
+    max-width: 400px;
+    text-align: center; 
+}
+#preloader .progress {
+    width: 120px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 auto 15px auto;
+}
+#preloader .progress span {
+      display: block;
+      width: 0;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.8);
+}
+#preloader.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+h2 {
+	color: white;
+}
+
+#header {
+	transition: all 1s;
+}
+
+.sticky {
+	position: fixed;
+	top: 0;
+	z-index: 2;
+	display: block;
+	width: 100%;
+	height: 39px;
+	padding: 0;
+	margin: 0;
+	background-color: #333333;
+	opacity: 0.6;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+nav ul li {
+	float: right;
+	display: inline-block;
+	position: relative;
+	font-family: 'Raleway', sans-serif;
+}
+/*This is the submenu*/
+nav li ul {    
+    background-color:black;
+    opacity: 0.8;
+    border-radius: 5px;
+    color: white;
+    position:absolute;
+    width:auto;
+    display: none;
+}
+
+nav li li {
+	margin: 2px;
+	width: 100%;
+}
+
+/* This is the highlighted box */
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 10px 10px;
+	text-decoration: none;
+}
+
+.c {
+	margin-left: 4px;
+}
+
+li a:hover {
+    background-color: #545454;
+}
+
+.title {
+	position: absolute;
+	top: 59%;
+	left: 50%;
+	text-align: center;
+    transform: translateX(-50%) translateY(-50%);
+	margin: 0 auto;
+	margin-top: -45px;
+	color: white;
+	font-family: 'Lobster', cursive;
+	font-size: 80px;
+	font-weight: 1000;
+/*	opacity: 0;
+	visibility: false;
+*/}
+
+#subtitle {
+	padding: 10px 0 0 0;
+	font-family: 'Raleway', Helvetica, sans-serif;
+	font-size: 22px;
+}
+
+
+#scroll {
+	position: fixed;
+	margin-left: -60px;
+	bottom: 10px;
+	font-size: 20px;
+	color: black;
+	display:none;
+}
+
+#scroll:hover {
+	color: #d3d3d3;
+	margin-bottom: 2px;
+}
+
+div.full-page { width:100%; height: 100;}
+div.parallax-page1 { width:100%; }
+div.parallax-page { width:100%; }
+div.parallax-page2 { height:100%;}
+
+div#page-1 {
+	background-image:url('img/lujan2.jpg');
+	background-size: cover;
+}
+
+/* Welcome page */
+.strip {
+	display: block;
+	position: relative;
+	height: 350px;
+	z-index: 1;
+}
+
+div#page-2 {
+	/*width: 100%;
+    height: 100%;
+    display: table;
+    text-align: center;*/
+	background-color:#0f0f0d;
+	z-index: 1;
+}
+
+.header-text {
+	color: #d6d6d0;
+	font-family: 'Raleway', Helvetica, sans-serif;
+	font-size: 40px;
+	opacity: 0.8;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(0);
+    /*display: table-cell;
+    vertical-align: middle;*/
+    opacity: 0;
+	transition: all 2s ease-out;
+}
+#headtext.fade{
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50%);
+}
+/*About Me Page*/
+#about-me {
+	position: relative;
+	background-image: url(img/aboutme.jpg);
+	background-size: cover;
+	z-index: 0;
+}
+
+#headshot {
+	height: auto; 
+    width: auto; 
+    max-width: 300px; 
+    max-height: 300px;
+	border-radius: 50%;
+	border: 1px solid black;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#info {
+	position: absolute;
+	top: 50%;
+    left: 75%;
+    height: auto;
+    width: 32%;
+    margin-bottom: 0;
+    background-color: #f3f3f1;
+    border-radius: 10px;
+	opacity: 0;
+    transform: translateX(-50%) translateY(0);
+	transition: all 1.3s ease-out;
+}
+
+#info.fade {
+	opacity: 0.5;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#info-text {
+	font-family: 'Dancing Script', Georgia, Times, serif;
+	font-size: 30px;
+	padding: 10px;
+}
+
+#info-text p {
+	font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
+	font-size: 15px;
+	margin-top: 10px;
+	margin-bottom: 0;
+}
+
+/*Collections*/
+div#collections {background-color:#d6d6d0; position: relative; z-index: 1;}
+#collections .title {
+	font-family: "Raleway", Helvetica, sans-serif;
+	font-size: 40px;
+	position: absolute;
+	top: 20%;
+	left: 50%;
+    transform: translateX(-50%) translateY(0);
+	color: black;
+	opacity: 0;
+	transition: all 2s ease-out;
+}
+#coltitle.fade {
+	transform: translateX(-50%) translateY(-50%);
+	opacity: 1;
+}
+.collection-image {
+	z-index: 2;
+	position: absolute;
+	left: 5%;
+	top: 27%;
+	height: 50%;
+	width: 28%;
+	border: 2px solid rgba(255, 255, 255, 1);
+	border-radius: 30px;
+	opacity: 0;
+	transition: all 2s ease-out;
+	transform: translateY(10%);
+}
+.collection-image:nth-child(2) {left: 67%;}
+.collection-image:nth-child(3) {left: 36%;}
+.collection-image.fade {
+	opacity: 1;
+	transform: translateY(0);
+}
+.collection-image#one {
+	z-index: 2;
+	background-image: url('img/buenosairescol-crop.jpg');
+	background-size: cover;
+	background-position: center center;
+}
+.collection-image#two {
+	background-image: url('img/uruguaycol.jpg');
+	background-size: cover;
+	background-position: center center;
+}
+.collection-image#three {
+	background-image: url('img/lujan-crop.jpg');
+	background-size: cover;
+	background-position: center center;
+}
+.collection-image #hover {
+	border-radius: 5px 5px 26px 26px;
+	transition: all 0.3s ease-in;
+}
+.collection-image div p {opacity: 0; display: none; transition: all 0.8s ease-out;}
+.collection-image .hover-box {
+	z-index: 3;
+	position: absolute;
+	bottom: 0;
+	height: 27%;
+	width: 100%;
+	background-color: #000;
+	opacity: 0.5;
+	padding: 0;
+	margin: 0;
+}
+.collection-image .hover-box p {
+	opacity: 1;
+	display: block;
+	z-index: 4;
+	color: white;
+	font-size: 2.5em;
+	font-family: 'Raleway', Helvetica, sans-serif;
+	padding:0;
+	margin:0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	width: 100%;
+	text-align: center;
+}
+
+#view {
+	position: absolute;
+	top: 88%;
+	left: 82%;
+	color: black;
+	font-family: 'Raleway', Helvetica, sans-serif;
+	font-size: 30px;
+	transform: translateY(50%);
+	opacity: 0;
+	transition: all 2s ease-out;
+}
+#view.fade {
+	opacity: 0.8;
+	transform: translateY(0);
+}
+#collection-link {
+	text-decoration: none;
+	color: black;
+}
+/* Projects page */
+#projects {
+	position: relative;
+	/*background-color: #eefcff;*/
+	background-image: url(img/projectsback-crop.jpg);
+	background-size: cover;
+	z-index: 0;
+}
+#projects .title {
+	font-family: "Raleway", Helvetica, sans-serif;
+	font-size: 40px;
+	position: absolute;
+	top: 47%;
+	left: 50%;
+    transform: translateX(-50%) translateY(0);
+	color: black;
+	opacity: 0;
+	transition: all 2s ease-out;
+}
+
+#projects .fade {
+	transform: translateX(-50%) translateY(-50%);
+	opacity: 1;
+}
+
+#projects p {
+	font-family: 'Goudy Bookletter 1911', Georgia, sans-serif;
+	font-size: 20px;
+	position: absolute;
+    transform: translateX(-50%) translateY(0);
+    margin-top: 10px;
+	opacity: 0;
+	transition: all 2s ease-out;
+}
+#projects p:nth-child(2) {
+	top: 46.5%;
+	left: 50%;
+}
+#projects p:nth-child(3) {
+	top: 47.5%;
+	left: 50%;
+}
+
+#footer {
+	background-color:#0f0f0d;
+}
+
+
