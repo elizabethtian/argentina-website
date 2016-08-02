@@ -22,7 +22,7 @@ $(document).ready(function() {
             var scroll = $(this).scrollLeft();
             if (scroll === 0) {
                 $(this).children('.overlay2').children('div').fadeIn(500);
-            }        
+            }
         },
         function() {
             $(this).children('.overlay').fadeOut(500);
@@ -75,7 +75,6 @@ $(document).ready(function() {
         }
         previousScroll = currentScroll;
     });
-
     var slideNum,size,current;
     //lightbox effect
     $('.lightboxTrigger').click(function(e) {
@@ -129,43 +128,40 @@ $(document).ready(function() {
             });
 
         }
-        slideNum = $('.lightboxTrigger').index(this);
-
-        // navigation prev/next
-        size = $('.lightboxTrigger').length;
-        current = slideNum;
-
-        $('body').on('click', '.slide-nav', function(e) {
-          // prevent default click event, and prevent event bubbling to prevent lightbox from closing
-          e.preventDefault();
-          e.stopPropagation();
-          var dest;
-
-          // looking for .prev
-          if ($(this).hasClass('prev')) {
-            dest = current - 1;
-            if (dest < 0) {
-              dest = size - 1;
-            }
-          } else {
-            // in absence of .prev, assume .next
-            dest = current + 1;
-            if (dest > size - 1) {
-              dest = 0;
-            }
-          }
-          var image_href = $('.lightboxTrigger').eq(dest).attr("href");
-          console.log(image_href);
-          // fadeOut curent slide, FadeIn next/prev slide
-          $('#lightbox img').remove();
-          var newImg = '<img src="' + image_href +'" />';
-          $('#content').append(newImg);
-          // update current slide
-          current = dest;
-        });
-
+        current = $('.lightboxTrigger').index(this);
+        console.log(current);
     });
-    
+    // navigation prev/next
+    size = $('.lightboxTrigger').length;
+    console.log(size);
+
+    $('body').on('click', '.slide-nav', function(e) {
+      // prevent default click event, and prevent event bubbling to prevent lightbox from closing
+      e.preventDefault();
+      e.stopPropagation();
+      var dest;
+
+      // looking for .prev
+      if ($(this).hasClass('prev')) {
+        dest = current - 1;
+        if (dest < 0) {
+          dest = size - 1;
+        }
+      } else {
+        // in absence of .prev, assume .next
+        dest = current + 1;
+        if (dest > size - 1) {
+          dest = 0;
+        }
+      }
+      var image_href = $('.lightboxTrigger').eq(dest).attr("href");
+      // fadeOut curent slide, FadeIn next/prev slide
+      $('#lightbox img').remove();
+      var newImg = '<img src="' + image_href +'" />';
+      $('#content').append(newImg);
+      // update current slide
+      current = dest;
+    });
     // Load more - to be decided if need later
     /*var imgs = [
     "../img/buenos/DSC01334.JPG", "../img/buenos/DSC01334.JPG", "../img/buenos/DSC01334.JPG", "../img/buenos/DSC01318.JPG"

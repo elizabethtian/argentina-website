@@ -51,7 +51,7 @@ nav li li {
 }
 
 /* This is the highlighted box */
-li a {
+nav li a {
 	display: block;
 	color: black;
 	text-align: center;
@@ -63,7 +63,7 @@ li a {
 	margin-left: 4px;
 }
 
-li a:hover {
+nav li a:hover {
     background-color: #bfbfbf;
 }
 
@@ -80,16 +80,17 @@ li a:hover {
 #colnav ul {
 	position: absolute;
 	top: 65%;
-	right: 0;
+	right: 13%;
 	transform: translateY(-50%);
-	width: 60%;
+	width: 56%;
 	margin: 0;
-	float: right;
+	/*float: right;*/
+	text-align: right;
 }
 #colnav ul li {
 	list-style-type: none;
 	font-family: "EB Garamond", serif;
-	font-size: 20px;
+	font-size: 18px;
 	display: inline;
 	margin: 0 2%;
 	background-color: #fff;
@@ -98,6 +99,8 @@ li a:hover {
 	padding: 0;
 	margin: 0;
 	display: inline;
+	text-decoration: none;
+	color: black;
 }
 #colnav ul li a:hover {
 	background-color: #fff;
@@ -161,6 +164,22 @@ div.collection {
     margin: 5vh 0 5vh 0;
     display: inline;
     z-index: 0;
+}
+.viewmore ul {margin: 0;}
+.viewmore ul li {
+	list-style-type: none;
+	font-family: "EB Garamond", serif;
+	font-size: 60px;
+	/*margin: 0 2%;*/
+	background-color: #fff;
+}
+.viewmore ul li a {
+	text-decoration: none;
+	color: #000;
+}
+.viewmore ul li a:hover {
+	background-color: #fff;
+	color: #d4d4d4;
 }
 .collection img.viewimg {
 	position: absolute;
