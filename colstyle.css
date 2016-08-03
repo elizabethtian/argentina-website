@@ -163,27 +163,34 @@ div.collection {
     height: 40vh;
     margin: 5vh 0 5vh 0;
     display: inline;
-    z-index: 0;
+    z-index: 4;
 }
-.viewmore ul {margin: 0;}
-.viewmore ul li {
+.collection .viewmorel {
+	position: absolute;
+	width: 20vh;
+    height: 40vh;
+    margin: 5vh 0 5vh 0;
+    display: inline;
+}
+.viewmorel ul {margin: 0;}
+.viewmorel ul li {
 	list-style-type: none;
 	font-family: "EB Garamond", serif;
-	font-size: 60px;
+	font-size: 46px;
 	/*margin: 0 2%;*/
 	background-color: #fff;
 }
-.viewmore ul li a {
+.viewmorel ul li a {
 	text-decoration: none;
 	color: #000;
 }
-.viewmore ul li a:hover {
+.viewmorel ul li a:hover {
 	background-color: #fff;
 	color: #d4d4d4;
 }
 .collection img.viewimg {
 	position: absolute;
-	top: 50%;
+	top: 45%;
 	left: 42%;
 	transform: translateX(-50%) translateY(-50%);
 	margin: 0;

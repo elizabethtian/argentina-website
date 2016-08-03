@@ -287,17 +287,17 @@ div#collections {background-color:#d6d6d0; position: relative; z-index: 1;}
 }
 .collection-image#one {
 	z-index: 2;
-	background-image: url('img/buenosairescol-crop.jpg');
+	background-image: url('img/lujan-crop.jpg');
 	background-size: cover;
 	background-position: center center;
 }
 .collection-image#two {
-	background-image: url('img/uruguaycol.jpg');
+	background-image: url('img/buenos/DSC01339.JPG');
 	background-size: cover;
 	background-position: center center;
 }
 .collection-image#three {
-	background-image: url('img/lujan-crop.jpg');
+	background-image: url('img/uruguay/IMG_0743.jpg');
 	background-size: cover;
 	background-position: center center;
 }
