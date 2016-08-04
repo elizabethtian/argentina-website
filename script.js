@@ -262,7 +262,10 @@ $(document).ready(function() {
     vph = $(window).height();
 
     $('.full-page').height(vph);
-    $('.strip').height(vph*0.4);
+    $('.strip').height(vph*0.6);
+    // var video = $("#video");
+    // video.height(vph*0.5);
+    // video.width(vpw*0.7);
     $('.parallax-page1').height(vph*1.1);
     $('.parallax-page').height(vph*1.15);
     $('.parallax-page2').width(vpw*1.1);
@@ -335,7 +338,7 @@ $(document).ready(function() {
     var page2 = new ScrollMagic.Scene({
         triggerElement: '#page-2',
         triggerHook: 0.6,
-        duration: vph*0.5
+        duration: vph*0.6
     })
     .setClassToggle('#headtext', 'fade')
     .addTo(controller);
