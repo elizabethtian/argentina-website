@@ -51,6 +51,11 @@ $(document).ready(function() {
             $('.row').height($(this).width());
         });
 
+        $('.pano img').each(function() {
+            $(this).height($(this).width()/3.5);
+            $('.pano').height($(this).width()/3.5);
+        });
+
     }).resize();
 
     //disappearing navbar
@@ -88,9 +93,21 @@ $(document).ready(function() {
             //insert img tag with clicked link's href as src value
             $('#content').html('<img src="' + image_href + '" />');
 
-            var maxheightvalue = $("#lightbox").height -60;
+            // center lightbox image
+            var maxheightvalue = $("#lightbox").height() - 80;
             $("#lightbox img").css("max-height", maxheightvalue + "px");
-
+            var pano = $(this).parent().hasClass('pano');
+            if (pano) {
+                var imgheight = $(this).children().height();
+                $("#lightbox img").css("margin-top", (maxheightvalue - imgheight)/2) + "px";
+                var w = $(window).width();
+                $("#lightbox img").css("max-width", w - 50 + "px");
+                $(".prev,.next").css("top", "95%");
+            } else {
+                $("#lightbox img").css("margin-top", 55 + "px");
+                $("#lightbox img").css("max-width", "");
+                $(".prev,.next").css("top", "50%");
+            }
             //show lightbox window - you can use a transition here if you want, i.e. .show('fast')
             $('#lightbox').fadeIn(400);
             $('body').addClass("stop-scroll");
@@ -126,10 +143,23 @@ $(document).ready(function() {
                     $('#lightbox').fadeOut(300);
                 }
             });
-
+            // center lightbox image
+            var maxheightvalue = $("#lightbox").height() - 80;
+            $("#lightbox img").css("max-height", maxheightvalue + "px");
+            var pano = $(this).parent().hasClass('pano');
+            if (pano) {
+                var imgheight = $(this).children().height();
+                $("#lightbox img").css("margin-top", (maxheightvalue - imgheight)/2) + "px";
+                var w = $(window).width();
+                $("#lightbox img").css("max-width", w - 50 + "px");
+                $(".prev,.next").css("top", "95%");
+            } else {
+                $("#lightbox img").css("margin-top", 55 + "px");
+                $("#lightbox img").css("max-width", "");
+                $(".prev,.next").css("top", "50%");
+            }
         }
         current = $('.lightboxTrigger').index(this);
-        console.log(current);
     });
     // navigation prev/next
     size = $('.lightboxTrigger').length;
@@ -159,6 +189,23 @@ $(document).ready(function() {
       $('#lightbox img').remove();
       var newImg = '<img src="' + image_href +'" />';
       $('#content').append(newImg);
+        
+      // center lightbox image for pano
+      var maxheightvalue = $("#lightbox").height() - 80;
+      $("#lightbox img").css("max-height", maxheightvalue + "px");
+      var pano = $('.lightboxTrigger').eq(dest).parent().hasClass('pano');
+      if (pano) {
+          var imgheight = $('.cover').eq(dest).height();
+          $("#lightbox img").css("margin-top", (maxheightvalue - imgheight)/2) + "px";
+          var w = $(window).width();
+          $("#lightbox img").css("max-width", w - 50 + "px");
+          $(".prev,.next").css("top", "95%");
+      } else {
+                $("#lightbox img").css("margin-top", 55 + "px");
+                $("#lightbox img").css("max-width", "");
+                $(".prev,.next").css("top", "50%");
+      }
+
       // update current slide
       current = dest;
     });

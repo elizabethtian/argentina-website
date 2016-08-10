@@ -157,6 +157,7 @@ div.collection {
 }
 
 .cover {object-fit: cover;}
+#pos {object-position: 0 0;}
 .collection .viewmore {
 	position: absolute;
 	width: 20vh;
@@ -278,6 +279,27 @@ div.row {
 	opacity: 0.8;
 }
 
+div.pano {
+	position: relative;
+	background-size: cover;
+	height: 28vh;
+	width: 80%;
+	margin: 0 auto;
+	margin-bottom: 1.1666%
+}
+
+div.pano img {
+	width: 100%;
+    /*margin: 1.1666%;*/
+	height: 28vh;
+    padding: 0;
+    float: left;
+}
+
+.pano img:hover {
+	opacity: 0.8;
+}
+
 /****************** Lightbox functionality *******************/
 #lightbox {
     position:fixed; /* keeps the lightbox window in the current viewport */
@@ -317,7 +339,7 @@ div.row {
     box-shadow:0 0 25px #111;
     -webkit-box-shadow:0 0 25px #111;
     -moz-box-shadow:0 0 25px #111;
-    max-width:840px;
+    max-width: 840px;
     max-height: 87vh;
 }
 .stop-scroll {overflow: hidden;}
