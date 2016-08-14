@@ -6,7 +6,7 @@ body {
 	padding: 0;
 }
 /** Video **/
-video#bgvid { 
+#bgvid { 
     position: fixed;
     top: 50%;
     left: 50%;
