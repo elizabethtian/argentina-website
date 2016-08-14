@@ -1,123 +1,23 @@
 <!DOCTYPE html>
-<html>
 	<head>
 		<meta charset="utf-8">
 		<title>Argentina Photo Blog</title>
-		<link href='https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911' rel='stylesheet' type='text/css'>
-		<link href='https://fonts.googleapis.com/css?family=Raleway:100' rel='stylesheet' type='text/css'>
-		<link href='https://fonts.googleapis.com/css?family=Syncopate:700,400' rel='stylesheet' type='text/css'>	
-		<link href='https://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
-		<link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
-		<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
 		<link rel="stylesheet" href="style.css"/>
 	</head>
-	<body class="loading">
-		<div id="preloader">
-		    <div class="txt">
-		        <p class="txt-perc">0%</p>
-		        <div class="progress"><span></span></div>
-		    </div>
-		</div>
-
-		<nav id="header" class="sticky">
-			<ul>
-				<li><a href="#page-1">Home</a></li>
-				<li><a href="#about-me">About Me</a></li>
-				<li class="dropdown"><a href="#collections">Collections</a>
-					<ul class="collect">
-						<li><a class="c" href="#">Cinematography</a></li>
-						<li><a class="c" href="collections/buenos.html">Buenos Aires</a></li>
-						<li><a class="c" href="collections/gran.html">Gran BA</a></li>
-						<li><a class="c" href="collections/uruguay.html">Uruguay</a></li>
-						<li><a class="c" href="collections/tigre.html">El Tigre</a></li>
-						<li><a class="c" href="collections/iguazu.html">Iguazu Falls</a></li>
-					</ul>
-				</li>
-				<li class="dropdown"><a href="#ptitle">Projects</a>
-					<ul class="collect">
-						<li><a href="https://github.com/elizabethtian/Cursos-Salesforce-App" class="c">Salesforce Courses App</a></li>
-						<li><a href="https://github.com/elizabethtian/categories-visualization" class="c">Donar Online Visualizations</a></li>
-						<li><a href="https://github.com/elizabethtian/salesforce-batch-processing" class="c">Salesforce Batch Processing</a></li>
-						<li><a href="https://github.com/elizabethtian/winguweb-integration" class="c">WinguWeb Integration</a></li>
-					</ul>
-			</ul>
-		</nav>
+	<body>
+		<video playsinline autoplay id="bgvid" >
+	    	<source src="mov/ba-bg.webm" type="video/webm">
+		    <source src="mov/ba-bg-v1.mp4" type="video/mp4">
+		</video>
 		
-		<!-- Title page -->
-		<div class="full-page">
-			<div class="il parallax-page1" id="page-1">
-				<div id="titletext" class="title">
-						elizabeth tian
-						<div id="subtitle">
-						Buenos Aires 2016
-						</div>
-						<!--<div id="scroll">
-						~ SCROLL ~
-						</div>	-->		
-				</div>
-			</div>
-		</div>
+		<a href="first.html" id="travel">TRAVEL WITH ME</a>
 
-		<!-- Welcome -->
-		<div id="page-2" class="strip">
-			<div id="headtext" class="header-text">
-				WELCOME TO MY BLOG
-			</div>
-			<p style="color: white;">[View Video]</p>
-		</div>
+		<a href="first.html" id="video-skip">SKIP VIDEO</a>
 
-		<!-- About me -->
-		<div class="full-page">
-			<!--<img id="headshot" src="headshot.jpg"/>-->
-			<div class="il parallax-page" id="about-me">
-				<div id="info">
-					<div id="info-text">
-						About Me
-						<p>
-						19 years old, Dallas, Texas, Computer Science, Princeton '19 <br>
-					    food, travel, videography, aesthetics, more food<br>
-					    IIP-IN Argentina intern at Wingu in Buenos Aires, summer 2016
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!-- Collections -->
-		<div class="full-page" id="collections">
-			<div id="coltitle" class="title">COLLECTIONS</div>
-			<a href="collections/gran.html" class="collection-image show-name" id="one">
-				<div id="hover">
-					<p>Gran BA</p>
-				</div>
-			</a>
-			<a href="collections/buenos.html" class="collection-image" id="two">
-				<div id="hover">
-					<p>Buenos Aires</p>
-				</div>
-			</a>
-			<a href="collections/uruguay.html" class="collection-image" id="three">
-				<div id="hover">
-					<p>Uruguay</p>
-				</div>
-			</a>
-			<div id="view"><a href="collections.html" id="collection-link">view more...</a></div>
-		</div>
-
-		<!-- Projects -->
-		<div class="full-page" id="procontainer">
-			<div class="il parallax-page2" id="projects">
-				<div class="title" id="ptitle">PROJECTS</div>
-				<p>You can view my projects on Github <a href="https://github.com/elizabethtian">here</a>!</p>
-				<!--<p><br>Continue scrolling for full effect!</p>-->
-			</div>
-		</div>
-		
-		
 		<script src=jquery-3.1.0.min.js></script>
 		<script src=greensock-js/src/minified/TweenMax.min.js></script>
- 		<script src=scrollmagic/scrollmagic/minified/ScrollMagic.min.js></script>
+		<script src=scrollmagic/scrollmagic/minified/ScrollMagic.min.js></script>
 		<script src=scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js></script>
 		<script src=scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js></script>
 		<script src=greensock-js/src/minified/plugins/ScrollToPlugin.min.js></script>

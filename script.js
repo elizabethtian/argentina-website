@@ -48,13 +48,12 @@ $(document).ready(function() {
         // If there are multiple elements with the same class, "main"
         $('.row img').each(function() {
             $(this).height($(this).width());
-            $('.row').height($(this).width());
         });
-
+        $('.row').height($('.row img').width());
         $('.pano img').each(function() {
             $(this).height($(this).width()/3.5);
-            $('.pano').height($(this).width()/3.5);
         });
+        $('.pano').height($('.pano img').width()/3.5);
 
     }).resize();
 
@@ -163,7 +162,6 @@ $(document).ready(function() {
     });
     // navigation prev/next
     size = $('.lightboxTrigger').length;
-    console.log(size);
 
     $('body').on('click', '.slide-nav', function(e) {
       // prevent default click event, and prevent event bubbling to prevent lightbox from closing
@@ -209,6 +207,48 @@ $(document).ready(function() {
       // update current slide
       current = dest;
     });
+
+
+     /******************* Load More **********************/
+    $(function () {
+        if(document.title != "Iguazu") { 
+            $("div.row").slice(0, 4).show();
+        } else {
+            $("div.pano").slice(0, 3).show();
+        }
+        $('.row img').each(function() {
+            $(this).height($(this).width());
+        });
+        $('.row').height($('.row img').width());
+        $('.pano img').each(function() {
+            $(this).height($(this).width()/3.5);
+        });
+        $('.pano').height($('.pano img').width()/3.5);
+
+        $("#loadMore").on('click', function (e) {
+            e.preventDefault();
+            $("div:hidden").slice(0, 4).slideDown();
+            $('.row').height($('.pano img').width()/3.5);
+            $('.row img').each(function() {
+                $(this).height($(this).width());
+                // $('div.row').height($(this).width());
+            });
+            if (document.title != "Iguazu") {
+                $('div.row').height($('.row img').width());
+            } else {
+                $('div.row').height($('.pano img').width()/3.5 + 5);
+            }
+            $('.pano img').each(function() {
+                $(this).height($(this).width()/3.5);
+            });
+            $('.pano').height($('.pano img').width()/3.5);
+            if ($("div:hidden").length == 0) {
+                $("#loadMore").fadeOut('slow');
+            }
+        });
+    });
+
+
     // Load more - to be decided if need later
     /*var imgs = [
     "../img/buenos/DSC01334.JPG", "../img/buenos/DSC01334.JPG", "../img/buenos/DSC01334.JPG", "../img/buenos/DSC01318.JPG"
@@ -350,6 +390,15 @@ $(document).ready(function() {
             }
         }
     });
+    /************************ video ***************************************/
+    var vid = document.getElementById("bgvid"); 
+
+    setTimeout(function() {
+        vid.pause();
+    }, 225000)
+
+    $("#travel").delay(221000).fadeIn(1000);
+    $("#video-skip").delay(221000).fadeOut(1000);
 
     /************************ page1 scene ***************************************/
 
@@ -389,6 +438,14 @@ $(document).ready(function() {
     })
     .setClassToggle('#headtext', 'fade')
     .addTo(controller);
+    var page2 = new ScrollMagic.Scene({
+        triggerElement: '#page-2',
+        triggerHook: 0.5,
+        duration: vph*0.6
+    })
+    .setClassToggle('#video-link', 'fade')
+    .addTo(controller);
+
 
     /************************ aboutme scene ***************************************/
     var aboutme = new ScrollMagic.Scene({

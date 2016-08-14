@@ -265,7 +265,10 @@ div.row {
 	background-size: cover;
 	height: 40vh;
 	width: 77%;
-	margin: 0 auto;
+    margin: 1.1666% auto;
+	padding-bottom: 1.1666%;
+	display: none;
+	padding-top: auto;
 }
 .row img {
     width: 31%;
@@ -285,7 +288,8 @@ div.pano {
 	height: 28vh;
 	width: 80%;
 	margin: 0 auto;
-	margin-bottom: 1.1666%
+	margin-bottom: 1.1666%;
+	display: none;
 }
 
 div.pano img {
@@ -368,8 +372,47 @@ div.pano img {
 }
 
 /****************** Load more *******************/
-#load-more {
-	position: absolute;
-	height: 20px;
-	text-align: center;
+
+.loadIt {
+	position: relative;
+	width: 100%;
+	height: 50px;
+	/*margin: 50px auto;*/
 }
+
+#loadMore {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	margin: 40px auto;
+	margin-top: 70px;
+  display: block;
+  background-color: #eaeaea;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#eaeaea), to(#e7e7e7));
+  background-image: -webkit-linear-gradient(top, #eaeaea, #e7e7e7); 
+  background-image: -moz-linear-gradient(top, #eaeaea, #e7e7e7); 
+  background-image: -ms-linear-gradient(top, #eaeaea, #e7e7e7); 
+  background-image: -o-linear-gradient(top, #eaeaea, #e7e7e7); 
+  color: #969696;
+  width: 100px;
+  height: 100px;
+  /*position: relative;*/
+  text-align: center;
+  line-height: 100px;
+  border-radius: 50%;
+  box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
+  font-family: "EB Garamond", sans-serif;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+#loadMore:hover {
+  color: #555;
+  background: #f5f5f5;
+  text-decoration: none;
+}
+
+
+
+
+
