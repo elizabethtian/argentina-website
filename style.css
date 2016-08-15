@@ -37,7 +37,9 @@ body {
 	font-size: 36px;
 	text-decoration: none;
 }
-
+#video-skip:hover {
+	color: #d3d3d3;
+}
 #travel {
 	position: absolute;
 	top: 80%;
@@ -53,6 +55,9 @@ body {
 	font-size: 45px;
 	text-decoration: none;
 	display: none;
+}
+#travel:hover {
+	color: #d3d3d3;
 }
 
 .loading {overflow: hidden;}

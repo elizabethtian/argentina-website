@@ -392,13 +392,63 @@ $(document).ready(function() {
     });
     /************************ video ***************************************/
     var vid = document.getElementById("bgvid"); 
+    var stopPlayAt = 225, 
+        textFade = 221,
+      stopPlayTimer;
+    var tag = document.createElement("script");
+    tag.src = "//www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName("script")[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    window.onYouTubeIframeAPIReady = function() {
+        player = new YT.Player("bgvid", {
+          "videoId": "nn4qVbWC-vk",
+          "events": {
+            "onReady": onPlayerReady,
+            "onStateChange": onPlayerStateChange
+          }
+        });
+    }
+    function onPlayerReady(event) {
+        event.target.playVideo();
+    }
 
-    setTimeout(function() {
-        vid.pause();
-    }, 225000)
+    function onPlayerStateChange(event) {
+        var time, rate, remainingTime;
+        clearTimeout(stopPlayTimer);
+        clearTimeout()
+        // if (player.getCurrentTime >= stopPlayAt) {
+        //     player.pauseVideo();
+        // }
+        // if (player.getCurrentTime >= textFade) {
+        //     $("#travel").fadeIn(1000);
+        //     $("#video-skip").fadeOut(1000);
+        // }
+        if (event.data == YT.PlayerState.PLAYING) {
+          time = player.getCurrentTime();
+          // Add .4 of a second to the time in case it's close to the current time
+          // (The API kept returning ~9.7 when hitting play after stopping at 10s)
+          if (time < stopPlayAt) {
+            rate = player.getPlaybackRate();
+            remainingTime = (stopPlayAt - time) / rate;
+            stopPlayTimer = setTimeout(pauseVideo, remainingTime * 1000);
+          }
+          if (time < textFade) {
+            rate = player.getPlaybackRate();
+            remainingTime = (textFade - time) / rate;
+            stopPlayTimer = setTimeout(textFadeIn, remainingTime * 1000);
+          }        
+        }
+      }
+    function pauseVideo() {
+        player.pauseVideo();
+    }
+    function textFadeIn() {
+        $("#travel").fadeIn(1000);
+        $("#video-skip").fadeOut(1000);
+    }
 
-    $("#travel").delay(221000).fadeIn(1000);
-    $("#video-skip").delay(221000).fadeOut(1000);
+    // $("#travel").delay(221000).fadeIn(1000);
+    // $("#video-skip").delay(221000).fadeOut(1000);
 
     /************************ page1 scene ***************************************/
 
