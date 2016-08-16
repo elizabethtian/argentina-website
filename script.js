@@ -242,7 +242,7 @@ $(document).ready(function() {
                 $(this).height($(this).width()/3.5);
             });
             $('.pano').height($('.pano img').width()/3.5);
-            if ($("div:hidden").length == 0) {
+            if ($("div.row:hidden").length == 0) {
                 $("#loadMore").fadeOut('slow');
             }
         });
